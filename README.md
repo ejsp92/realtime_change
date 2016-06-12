@@ -24,7 +24,7 @@ Basic Configuration:
 ```ruby
 # Configure
 RealtimeChange.setup do |config|
-  config.redis = Redis.new "redis://localhost:6379"
+  config.redis = Redis.new url: "redis://localhost:6379"
 end
 
 # Add model functionality
