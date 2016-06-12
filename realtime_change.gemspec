@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Emeson Santana"]
   spec.email         = ["emesonsantana@gmail.com"]
 
-  spec.summary       = %q{Gem for realtime client-server communication. Created to work with communication-socket.}
-  spec.description   = %q{Gem for realtime client-server communication. Created to work with communication-socket.}
+  spec.summary       = %q{Gem for realtime client-server communication. Created to work with communication-socket node.js application (https://github.com/emesonsantana/communication-socket).}
+  spec.description   = %q{Gem for realtime client-server communication. Created to work with communication-socket node.js application (https://github.com/emesonsantana/communication-socket).}
   spec.homepage      = "https://github.com/emesonsantana/realtime_change"
   spec.license       = "MIT"
 
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "redis"
+  spec.add_development_dependency "redis", "~> 3.3"
   spec.add_development_dependency "rspec", "~> 3.2"
 end
