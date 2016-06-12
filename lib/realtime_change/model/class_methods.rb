@@ -9,11 +9,11 @@ module RealtimeChange
 
         # Define an anonymous module for all of the instance methods.
         instance_methods = Module.new do
-          def json_to_send
+          def resource_content
             self.to_json
           end
 
-          def send_to
+          def recipient_uids
             []
           end
 
@@ -22,8 +22,8 @@ module RealtimeChange
               type: 'change',
               action: 'create',
               resource: self.class.name,
-              resource_content: json_to_send,
-              send_to: send_to
+              resource_content: resource_content,
+              recipient_uids: recipient_uids
             }
             notify message
           end
@@ -33,8 +33,8 @@ module RealtimeChange
               type: 'change',
               action: 'update',
               resource: self.class.name,
-              resource_content: json_to_send,
-              send_to: send_to
+              resource_content: resource_content,
+              recipient_uids: recipient_uids
             }
             notify message
           end
@@ -44,8 +44,8 @@ module RealtimeChange
               type: 'change',
               action: 'destroy',
               resource: self.class.name,
-              resource_content: json_to_send,
-              send_to: send_to
+              resource_content: resource_content,
+              recipient_uids: recipient_uids
             }
             notify message
           end
