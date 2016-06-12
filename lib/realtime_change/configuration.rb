@@ -3,8 +3,8 @@ module RealtimeChange
     class << self
       attr_accessor :redis
 
-      def configure
-        yield self
+      def configure(&block)
+        block.call self
       end
     end
   end

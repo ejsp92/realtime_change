@@ -4,8 +4,8 @@ require "realtime_change/model"
 
 module RealtimeChange
   class << self
-    def setup
-      Configuration.configure(yield)
+    def setup(&block)
+      Configuration.configure(&block)
     end
 
     def redis
