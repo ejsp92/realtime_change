@@ -1,5 +1,5 @@
-require 'dragonfly/model/instance_methods'
-require 'dragonfly/model/class_methods'
+require 'realtime_change/model/instance_methods'
+require 'realtime_change/model/class_methods'
 
 module RealtimeChange
   module Model
