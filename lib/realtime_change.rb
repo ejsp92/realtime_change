@@ -9,12 +9,16 @@ module RealtimeChange
       Configuration.configure(&block)
     end
 
-    def redis
-      Configuration.redis
+    def redis_pub
+      Configuration.redis_pub
+    end
+
+    def redis_sub
+      Configuration.redis_sub
     end
 
     def is_online(uid)
-      Configuration.redis.sismember(RealtimeChange::ONLINE_SOCKETS_KEY, uid)
+      redis_pub.sismember(RealtimeChange::ONLINE_SOCKETS_KEY, uid)
     end
   end
 end

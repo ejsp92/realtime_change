@@ -10,7 +10,7 @@ module RealtimeChange
         # Define an anonymous module for all of the instance methods.
         instance_methods = Module.new do
           def resource_content
-            self.to_json
+            self.attributes
           end
 
           def recipient_uids
@@ -25,6 +25,7 @@ module RealtimeChange
               resource_content: resource_content,
               recipient_uids: recipient_uids
             }
+
             notify message
           end
 
@@ -36,6 +37,7 @@ module RealtimeChange
               resource_content: resource_content,
               recipient_uids: recipient_uids
             }
+
             notify message
           end
 
@@ -47,11 +49,12 @@ module RealtimeChange
               resource_content: resource_content,
               recipient_uids: recipient_uids
             }
+
             notify message
           end
 
           def notify(message)
-            RealtimeChange.redis.publish 'server-message', message
+            RealtimeChange.redis_pub.publish 'server-message', message.to_json
           end
         end
 
